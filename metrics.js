@@ -46,7 +46,12 @@ other_base_events:
         'cumulative_layout_shift',
         'first_contentful_paint_time',
         'first_byte_time',
-    ]
+    ],
+    '[]': 
+    {
+        defaults: ['rpv', 'cr', 'aov', ['base', 'basket_add']],
+        optional: [], 
+    },
     'homepage': 
     {
         defaults: ['rpv', 'cr', 'aov', ['base', 'basket_add']],
@@ -56,16 +61,22 @@ other_base_events:
     {
         defaults: 
         [
-            ['base', 'search_page'],
-            ['base', 'product_page'],
-            ['product_page', 'basket_add'], 
-            ['base', 'ddl_product_list_visit'],
-            ['base', 'no_search_results'],
             ['base', 'basket_add'],
             ['base', 'basket_visit'],
             ['base', 'checkout'],
+            ['base', 'product_page_visit_from_rec'],
+            ['base', 'basket_add_from_rec_rail'],
         ]
-        optional: [], 
+        optional: 
+        [
+            ['base', 'product_page_visit_from_rec_with_qubit'],
+            ['base', 'product_description_accordion_click'], 
+            ['base', 'product_description_accordion_view'], 
+            ['base', 'wishlist_heart_icon_click'], 
+            ['base', 'wishlist_interaction_event'],
+            ['base', 'login_page'],
+            ['base', 'product_page_saw_cookies_consent'],
+        ]
     },
     'checkout': 
     {
@@ -106,11 +117,6 @@ other_base_events:
         defaults: ['rpv', 'cr', 'aov', ['base', 'basket_add']],
         optional: [], 
     },
-    'quick_buy_modal_shown': 
-    {
-        defaults: ['rpv', 'cr', 'aov', ['base', 'basket_add']],
-        optional: [], 
-    },
     'basket_add': 
     {
         defaults: ['rpv', 'cr', 'aov', ['base', 'basket_add']],
@@ -146,6 +152,11 @@ other_base_events:
         optional: [], 
     },
     'landing_page': 
+    {
+        defaults: ['rpv', 'cr', 'aov', ['base', 'basket_add']],
+        optional: [], 
+    },
+    'login_page': 
     {
         defaults: ['rpv', 'cr', 'aov', ['base', 'basket_add']],
         optional: [], 
